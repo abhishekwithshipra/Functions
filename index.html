@@ -44,6 +44,7 @@
   --gold-bright:#E8C774;
   --ivory:#F5E6D3;
   --ink:#1a0e15;
+  --terracotta:#C0522B;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
@@ -191,7 +192,7 @@ section{position:relative;overflow:hidden;padding:0 28px}
 
 /* ============ DIVIDER ============ */
 .divider{
-  padding:60px 28px 40px;
+  padding:50px 28px 40px;
   text-align:center;
   background:var(--cream);
 }
@@ -213,10 +214,7 @@ section{position:relative;overflow:hidden;padding:0 28px}
 
 /* ============ HALDI ============ */
 .haldi{
-  background:
-    radial-gradient(ellipse at 20% 0%,#FFE182 0%,transparent 60%),
-    radial-gradient(ellipse at 80% 100%,#F4A100 0%,transparent 55%),
-    linear-gradient(180deg,#FFD166 0%,#F4A100 100%);
+  background:linear-gradient(180deg,#D4603A 0%,#C0522B 60%,#A84522 100%);
   padding:100px 28px 140px;
   min-height:100vh;
 }
@@ -254,10 +252,10 @@ section{position:relative;overflow:hidden;padding:0 28px}
   letter-spacing:.05em;
 }
 .carnival-card{
-  background:rgba(255,255,255,.35);
+  background:rgba(255,255,255,.12);
   backdrop-filter:blur(8px);
   -webkit-backdrop-filter:blur(8px);
-  border:1.5px solid rgba(255,255,255,.6);
+  border:1.5px solid rgba(255,220,180,.35);
   border-radius:4px;
   padding:40px 28px;
   position:relative;
@@ -297,6 +295,12 @@ section{position:relative;overflow:hidden;padding:0 28px}
   line-height:1.3;
 }
 .detail-value strong{font-weight:500}
+
+/* Carnival card overrides for terracotta bg */
+.haldi .carnival-card .detail-label{color:#FFD4A0;opacity:.9}
+.haldi .carnival-card .detail-value{color:#FFF4E0 !important}
+.haldi .carnival-card .detail-value strong{color:#FFF4E0}
+.haldi .carnival-card .detail-pill{border-color:rgba(255,210,160,.35);color:#FFE0C8}
 .detail-pill{
   display:inline-block;
   padding:6px 16px;
@@ -896,6 +900,169 @@ body.main-hidden {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+
+/* ============ CARNIVAL BY THE GREENS ============ */
+.carnival-greens{
+  background:linear-gradient(180deg,#EBF2D8 0%,#D6E8B0 60%,#C5DC98 100%);
+  padding:80px 28px 90px;
+  text-align:center;
+}
+.cg-photo-wrap{
+  width:100%;max-width:420px;
+  margin:0 auto 40px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 20px 50px -15px rgba(60,80,20,.35);
+  border:1px solid rgba(108,127,58,.2);
+}
+.cg-photo{
+  width:100%;height:auto;
+  display:block;
+  border-radius:12px;
+}
+.cg-kicker{
+  font-family:'Manrope',sans-serif;
+  font-size:11px;
+  letter-spacing:.4em;
+  text-transform:uppercase;
+  text-align:center;
+  color:#5C7A3E;
+  opacity:.85;
+  margin-bottom:16px;
+}
+.cg-title{
+  font-family:'Fraunces',serif;
+  font-variation-settings:"SOFT" 60;
+  font-weight:400;
+  font-style:italic;
+  font-size:58px;
+  line-height:.95;
+  text-align:center;
+  color:#2A3D10;
+  margin-bottom:12px;
+}
+.cg-title em{
+  font-family:'Allura',cursive;
+  font-style:normal;
+  font-size:.75em;
+  color:#5C7A3E;
+  display:block;
+  margin-top:6px;
+}
+.cg-subtitle{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:18px;
+  text-align:center;
+  color:#3A5020;
+  opacity:.75;
+  margin-bottom:40px;
+}
+.cg-card{
+  background:rgba(255,255,255,.6);
+  border:1px solid rgba(108,127,58,.25);
+  border-radius:2px;
+  padding:28px 20px;
+  margin-top:4px;
+  position:relative;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+.cg-games-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  padding-top:8px;
+}
+.cg-game-tag{
+  font-family:'Manrope',sans-serif;
+  font-size:12px;
+  letter-spacing:.06em;
+  padding:5px 12px;
+  border-radius:100px;
+  background:rgba(92,122,62,.12);
+  border:1px solid rgba(92,122,62,.3);
+  color:#3A5020;
+}
+@media(min-width:600px){
+  .cg-title{font-size:80px}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============ RIBBON DIVIDERS ============ */
+.ribbon-edge {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  margin: -1px 0 28px 0;
+  margin-top: -52px;
+}
+.ribbon-edge::before,
+.ribbon-edge::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+.ribbon-diamond {
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin: 0 14px;
+  position: relative;
+}
+.ribbon-diamond::before,
+.ribbon-diamond::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ribbon-diamond::before { right: 100%; margin-right: 6px; }
+.ribbon-diamond::after  { left:  100%; margin-left:  6px; }
+
+/* Color variants */
+.ribbon-edge.light::before,
+.ribbon-edge.light::after,
+.ribbon-diamond.light::before,
+.ribbon-diamond.light::after { background: rgba(255,255,255,0.3); }
+.ribbon-diamond.light { border-color: rgba(255,255,255,0.4); }
+
+.ribbon-edge.gold::before,
+.ribbon-edge.gold::after,
+.ribbon-diamond.gold::before,
+.ribbon-diamond.gold::after { background: rgba(212,175,92,0.4); }
+.ribbon-diamond.gold { border-color: rgba(212,175,92,0.5); }
+
+.ribbon-edge.warm::before,
+.ribbon-edge.warm::after,
+.ribbon-diamond.warm::before,
+.ribbon-diamond.warm::after { background: rgba(244,161,0,0.35); }
+.ribbon-diamond.warm { border-color: rgba(244,161,0,0.45); }
+
+.ribbon-edge.green::before,
+.ribbon-edge.green::after,
+.ribbon-diamond.green::before,
+.ribbon-diamond.green::after { background: rgba(92,122,62,0.4); }
+.ribbon-diamond.green { border-color: rgba(92,122,62,0.5); }
+
 </style>
 </head>
 <body>
@@ -944,23 +1111,24 @@ body.main-hidden {
 </section>
 
 <!-- DIVIDER -->
-<div class="divider">
-  <div class="divider-ornament">Event One</div>
+<div class="divider" style="background:#D4603A">
+  <div class="divider-ornament" style="color:#FFE0C8">Event One</div>
 </div>
 
 <!-- HALDI -->
 <section class="haldi">
+<div class="ribbon-edge light"><div class="ribbon-diamond light"></div></div>
   <div class="petals" id="petals"></div>
   <div class="fade-in">
     <div class="haldi-kicker">A day of sun, song &amp; colour</div>
-    <h2 class="haldi-title">Sun Splash<br><em>&amp;</em> Haldi</h2>
-    <p class="haldi-subtitle">Carnival by the pool</p>
+    <h2 class="haldi-title">Haldi</h2>
+    <p class="haldi-subtitle">A day of colour &amp; joy</p>
   </div>
   <div class="carnival-card fade-in stagger">
     <div class="detail-row">
       <span class="detail-label">When</span>
       <span class="detail-value"><strong>Sunday, 3<sup>rd</sup> May</strong></span>
-      <span class="detail-value" style="font-size:16px;opacity:.75">12:00 noon onwards</span>
+      <span class="detail-value" style="font-size:16px;opacity:.75">11:00 am onwards</span>
     </div>
     <div class="detail-row">
       <span class="detail-label">Where</span>
@@ -969,14 +1137,55 @@ body.main-hidden {
     </div>
     <div class="detail-row">
       <span class="detail-label">Dress Code</span>
-      <span class="detail-value" style="font-size:18px;font-style:italic">Vibrant, breezy<br>&amp; pool-ready</span>
+      <span class="detail-value" style="font-size:18px;font-style:italic">Vibrant &amp;<br>light colours</span>
       <span class="detail-pill">Bring your shades</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- CARNIVAL BY THE GREENS -->
+<div class="divider" style="background:#5C7A3E">
+  <div class="divider-ornament" style="color:#FFE8C8">Carnival</div>
+</div>
+<section class="carnival-greens">
+<div class="ribbon-edge green"><div class="ribbon-diamond green"></div></div>
+  <div class="cg-photo-wrap fade-in">
+    <img class="cg-photo" src="https://storage.googleapis.com/runable-templates/cli-uploads%2FYyb7NM8T5kZEauB8nTY0lvhsUNQnrUUj%2FhM1VUFvPppTDEZnmVwE9z%2Fcarnival_image.png" alt="Carnival by the Greens" loading="lazy">
+  </div>
+  <div class="fade-in">
+    <div class="cg-kicker">After the Haldi · Before the Night</div>
+    <h2 class="cg-title">Carnival<br><em>by the Greens</em></h2>
+    <p class="cg-subtitle">Games, laughter &amp; golden afternoon vibes</p>
+  </div>
+  <div class="cg-card fade-in stagger">
+    <div class="detail-row">
+      <span class="detail-label" style="color:#A8C47A;opacity:.9">When</span>
+      <span class="detail-value" style="color:#2A1A0A"><strong>Sunday, 3<sup>rd</sup> May</strong></span>
+      <span class="detail-value" style="font-size:16px;opacity:.75;color:#2A1A0A">11:00 am onwards</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label" style="color:#A8C47A;opacity:.9">Dress Code</span>
+      <span class="detail-value" style="font-size:18px;font-style:italic;color:#2A1A0A">Vibrant &amp; light colours</span>
+      <span class="detail-pill" style="border-color:rgba(108,127,58,.35);color:#5C7A3E">Go colourful!</span>
+    </div>
+    <div class="detail-row" style="border-bottom:none">
+      <span class="detail-label" style="color:#A8C47A;opacity:.9">Games</span>
+      <div class="cg-games-grid">
+        <span class="cg-game-tag">Ring Toss</span>
+        <span class="cg-game-tag">Hoop Shoot</span>
+        <span class="cg-game-tag">Sack Race</span>
+        <span class="cg-game-tag">Tug of War</span>
+        <span class="cg-game-tag">Treasure Hunt</span>
+        <span class="cg-game-tag">Tambola</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- TRANSITION -->
 <section class="transition-band">
+<div class="ribbon-edge warm"><div class="ribbon-diamond warm"></div></div>
   <p class="transition-text">
     as the sun<br>dips low…<br>
     <span>the night begins</span>
@@ -990,6 +1199,7 @@ body.main-hidden {
 
 <!-- COCKTAIL -->
 <section class="cocktail">
+<div class="ribbon-edge gold"><div class="ribbon-diamond gold"></div></div>
   <div class="shimmer-field" id="shimmerField"></div>
   <div class="fade-in">
     <div class="cocktail-kicker">An evening of starlight &amp; celebration</div>
@@ -1017,6 +1227,7 @@ body.main-hidden {
 
 <!-- VENUE -->
 <section class="venue">
+<div class="ribbon-edge gold"><div class="ribbon-diamond gold"></div></div>
   <div class="fade-in">
     <div class="venue-label">The Venue</div>
     <h3 class="venue-name">Radisson<em> RED</em></h3>
@@ -1030,6 +1241,7 @@ body.main-hidden {
 
 <!-- DRESS CODE -->
 <section class="dresscode">
+<div class="ribbon-edge gold"><div class="ribbon-diamond gold"></div></div>
   <div class="fade-in">
     <h3 class="dresscode-heading">What to wear</h3>
     <div class="dresscode-sub">A little guide</div>
@@ -1038,7 +1250,7 @@ body.main-hidden {
     <div class="dress-swatches haldi-swatches"></div>
     <div class="dress-info">
       <h3>Haldi Carnival</h3>
-      <p>Vibrant &amp; breezy florals, sunny yellows, pool-ready linens. Light on your feet.</p>
+      <p>Vibrant &amp; light colours — florals, sunshine yellows, breezy linens. Keep it cheerful &amp; effortless.</p>
     </div>
   </div>
   <div class="dress-card fade-in">
@@ -1052,6 +1264,7 @@ body.main-hidden {
 
 <!-- CLOSING -->
 <section class="closing">
+<div class="ribbon-edge gold"><div class="ribbon-diamond gold"></div></div>
   <div class="shimmer-field" id="shimmerFieldClose"></div>
   <div class="fade-in">
     <div class="photo-frame">
@@ -1206,16 +1419,18 @@ seedShimmer(document.getElementById('shimmerFieldClose'), 25);
   // Once audio actually starts, show the toggle
   audio.addEventListener('playing', showButton);
 
-  // Manual toggle
+  // Manual toggle — properly pause/resume
   btn.addEventListener('click', (e)=>{
     e.stopPropagation();
     userMuted = !userMuted;
-    if (!userMuted){
-      // user turned it back on; make sure it's playing
-      if (audio.paused){
-        const p = audio.play();
-        if (p && p.catch) p.catch(()=>{});
-      }
+    if (userMuted){
+      audio.pause();
+      btn.classList.add('muted');
+    } else {
+      audio.volume = 0;
+      const p = audio.play();
+      if (p && p.catch) p.catch(()=>{ userMuted = true; btn.classList.add('muted'); });
+      btn.classList.remove('muted');
     }
   });
 })();
@@ -1277,7 +1492,16 @@ seedShimmer(document.getElementById('shimmerFieldClose'), 25);
     }, 1300);
   }
 
-  openBtn.addEventListener('click', doOpen);
+  // Fix double-tap: use pointerdown/touchend to avoid ghost click
+  let openFired = false;
+  function fireOpen(e){
+    if(openFired) return;
+    openFired = true;
+    e.preventDefault();
+    doOpen();
+  }
+  openBtn.addEventListener('touchend', fireOpen, {passive:false});
+  openBtn.addEventListener('click', fireOpen);
 })();
 
 </script>
