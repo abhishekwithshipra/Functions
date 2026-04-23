@@ -5,29 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#1a0e15">
 <title>Abhishek &amp; Shipra · Wedding Festivities · 03.05</title>
-<meta name="description" content="Haldi Carnival · Cocktail & Sangeet · 3rd May · Radisson RED, Zirakpur">
+<meta name="description" content="Haldi Carnival · Cocktail & Sangeet · 3rd May · Radisson RED, Mohali">
 
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn, iMessage) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://anshpreetsingh351.github.io/Functions/">
 <meta property="og:title" content="Abhishek & Shipra · Wedding Festivities">
-<meta property="og:description" content="Haldi Carnival · Cocktail & Sangeet · 3rd May · Radisson RED, Zirakpur">
+<meta property="og:description" content="Haldi Carnival · Cocktail & Sangeet · 3rd May · Radisson RED, Mohali">
 <meta property="og:image" content="https://i.ibb.co/1JZWxNs6/preview1.jpg" /> 
 <meta property="og:image:secure_url" content="https://i.ibb.co/1JZWxNs6/preview1.jpg" />
 <meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="830">
-<meta property="og:image:alt" content="Abhishek & Shipra · 3rd May · Radisson RED, Zirakpur">
+<meta property="og:image:alt" content="Abhishek & Shipra · 3rd May · Radisson RED, Mohali">
 <meta property="og:site_name" content="Abhishek & Shipra">
 <meta property="og:locale" content="en_IN">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Abhishek & Shipra · Wedding Festivities">
-<meta name="twitter:description" content="Haldi Carnival · Cocktail & Sangeet · 3rd May · Radisson RED, Zirakpur">
+<meta name="twitter:description" content="Haldi Carnival · Cocktail & Sangeet · 3rd May · Radisson RED, Mohali">
 <meta name="twitter:image" content="https://i.ibb.co/1tcnKLRL/preview-3.jpg" />
-<meta name="twitter:image:alt" content="Abhishek & Shipra · 3rd May · Radisson RED, Zirakpur">
+<meta name="twitter:image:alt" content="Abhishek & Shipra · 3rd May · Radisson RED, Mohali">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,30;1,9..144,300..700,100&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Allura&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
@@ -566,14 +566,82 @@ section{position:relative;overflow:hidden;padding:0 28px}
   width:80px;height:80px;
   border-radius:50%;
   overflow:hidden;
-  border:1px solid rgba(212,175,92,.2);
-  box-shadow:0 8px 24px -8px rgba(0,0,0,.6);
+  border:2px solid rgba(255,255,255,.3);
+  box-shadow:0 8px 28px -6px rgba(0,0,0,.7),0 0 0 1.5px rgba(255,255,200,.15),0 0 12px 3px rgba(255,220,100,.2);
+  position:relative;
+  animation:swatchGlow 3s ease-in-out infinite alternate;
+}
+@keyframes swatchGlow{
+  0%{box-shadow:0 8px 32px -6px rgba(0,0,0,.7),0 0 0 1.5px rgba(255,255,200,.12),0 0 8px 2px rgba(255,220,100,.1)}
+  100%{box-shadow:0 8px 32px -6px rgba(0,0,0,.7),0 0 0 2px rgba(255,255,255,.25),0 0 16px 5px rgba(255,220,100,.3)}
+}
+.dress-swatches::after{
+  content:"";
+  position:absolute;inset:0;
+  border-radius:50%;
+  background:linear-gradient(135deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 45%,rgba(255,255,255,.18) 100%);
+  pointer-events:none;
+  mix-blend-mode:overlay;
 }
 .dress-swatches.haldi-swatches{
-  background:conic-gradient(#FF69B4 0deg 90deg,#FFD700 90deg 180deg,#FF8C00 180deg 270deg,#E03030 270deg 360deg);
+  background:conic-gradient(#8B004B 0deg 90deg,#F4C430 90deg 180deg,#FF9B1A 180deg 270deg,#FF3333 270deg 360deg);
+  filter:saturate(1.3) brightness(1.15);
 }
 .dress-swatches.cocktail-swatches{
-  background:conic-gradient(#1A5CFF 0deg 90deg,#111111 90deg 180deg,#D4AF37 180deg 270deg,#CC2200 270deg 360deg);
+  background:conic-gradient(#0D1B4C 0deg 90deg,#0A0A0A 90deg 180deg,#B8860B 180deg 270deg,#7A0C0C 270deg 360deg);
+  filter:saturate(1.3) brightness(1.2);
+  position:relative;
+  overflow:hidden;
+}
+/* shimmer on each colour segment via stacked pseudo + canvas-free approach */
+.dress-swatches.cocktail-swatches::before{
+  content:"";
+  position:absolute;inset:0;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(100,140,255,.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 25%, rgba(180,180,180,.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255,210,80,.18) 0%, transparent 50%),
+    radial-gradient(circle at 25% 75%, rgba(255,80,80,.15) 0%, transparent 50%);
+  pointer-events:none;
+  z-index:1;
+  mix-blend-mode:screen;
+}
+/* animated shimmer sweep across the cocktail colour circle */
+.dress-swatches.cocktail-swatches::after{
+  content:"";
+  position:absolute;inset:0;
+  border-radius:50%;
+  background:linear-gradient(
+    108deg,
+    transparent 0%,
+    transparent 28%,
+    rgba(255,255,255,0) 36%,
+    rgba(255,240,180,.7) 46%,
+    rgba(255,255,255,.85) 50%,
+    rgba(212,175,92,.65) 54%,
+    rgba(255,255,255,0) 64%,
+    transparent 72%,
+    transparent 100%
+  );
+  background-size:300% 100%;
+  background-position:-150% 0%;
+  animation:cocktailShimmerSweep 5s cubic-bezier(.4,0,.6,1) infinite;
+  pointer-events:none;
+  z-index:3;
+  mix-blend-mode:screen;
+}
+@keyframes cocktailShimmerSweep{
+  0%{background-position:-150% 0%}
+  40%,100%{background-position:250% 0%}
+}
+/* per-segment glow pulse */
+.dress-swatches.cocktail-swatches::before{
+  animation:cocktailSegmentPulse 3s ease-in-out infinite alternate;
+}
+@keyframes cocktailSegmentPulse{
+  0%{opacity:.7}
+  100%{opacity:1}
 }
 .dress-info{flex:1}
 .dress-info h3{
@@ -973,7 +1041,7 @@ body.main-hidden {
     <div class="detail-row">
       <span class="detail-label">Where</span>
       <span class="detail-value"><strong>Radisson RED</strong></span>
-      <span class="detail-value" style="font-size:15px;opacity:.75;font-style:italic">Zirakpur · Poolside</span>
+      <span class="detail-value" style="font-size:15px;opacity:.75;font-style:italic">Mohali</span>
     </div>
     <div class="detail-row">
       <span class="detail-label">Dress Code</span>
@@ -1013,7 +1081,7 @@ body.main-hidden {
     <div class="detail-row">
       <span class="detail-label">Where</span>
       <span class="detail-value"><strong>Radisson RED</strong></span>
-      <span class="detail-value" style="font-size:15px;opacity:.75;font-style:italic">Zirakpur</span>
+      <span class="detail-value" style="font-size:15px;opacity:.75;font-style:italic">Mohali</span>
     </div>
     <div class="detail-row">
       <span class="detail-label">Dress Code</span>
@@ -1028,8 +1096,8 @@ body.main-hidden {
   <div class="fade-in">
     <div class="venue-label">The Venue</div>
     <h3 class="venue-name">Radisson<em> RED</em></h3>
-    <div class="venue-city">Zirakpur</div>
-    <a class="map-btn" href="https://maps.google.com/?q=Holiday+Inn+Zirakpur" target="_blank" rel="noopener">
+    <div class="venue-city">Mohali</div>
+    <a class="map-btn" href="https://maps.app.goo.gl/kVoSJCvHoacWxTJJ7" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>
       Open in Maps
     </a>
@@ -1043,14 +1111,20 @@ body.main-hidden {
     <div class="dresscode-sub">A little guide</div>
   </div>
   <div class="dress-card fade-in">
-    <div class="dress-swatches haldi-swatches"></div>
+    <div style="position:relative;flex-shrink:0;width:80px;height:80px;">
+      <div class="dress-swatches haldi-swatches" id="swatchHaldi"></div>
+      <canvas class="swatch-glitter" data-swatch="haldi" style="position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);pointer-events:none;border-radius:50%;"></canvas>
+    </div>
     <div class="dress-info">
       <h3>Haldi Carnival</h3>
       <p>Vibrant &amp; breezy florals, sunny yellows, Light on your feet.</p>
     </div>
   </div>
   <div class="dress-card fade-in">
-    <div class="dress-swatches cocktail-swatches"></div>
+    <div style="position:relative;flex-shrink:0;width:80px;height:80px;">
+      <div class="dress-swatches cocktail-swatches" id="swatchCocktail"></div>
+      <canvas class="swatch-glitter" data-swatch="cocktail" style="position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);pointer-events:none;border-radius:50%;"></canvas>
+    </div>
     <div class="dress-info">
       <h3>Cocktail &amp; Sangeet</h3>
       <p>Soft metallics, champagne golds, muted ivories. Subtle shimmers â€” never loud.</p>
@@ -1287,6 +1361,64 @@ seedShimmer(document.getElementById('shimmerFieldClose'), 25);
   }
 
   openBtn.addEventListener('click', doOpen);
+})();
+
+
+/* ============ SWATCH GLITTER ============ */
+(function(){
+  document.querySelectorAll('.swatch-glitter').forEach(canvas => {
+    const isHaldi = canvas.dataset.swatch === 'haldi';
+    const colors = isHaldi
+      ? ['#F4C430','#8B004B','#FF9B1A','#FFFFFF','#FFC93C','#FF3333']
+      : ['#E8C774','#C0C0C0','#D4AF37','#FFFFFF','#FFE680','#B8860B','#F0E68C','#E5E4E2'];
+    const particles = [];
+    const W = 108, H = 108;
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    const cx = W/2, cy = H/2, R = 36;
+
+    const count = isHaldi ? 10 : 18;
+    for(let i=0;i<count;i++){
+      const angle = Math.random()*Math.PI*2;
+      const r = R + 2 + Math.random()*14;
+      particles.push({
+        x: cx + Math.cos(angle)*r,
+        y: cy + Math.sin(angle)*r,
+        size: isHaldi ? 0.6 + Math.random()*1.0 : 0.8 + Math.random()*1.4,
+        color: colors[Math.floor(Math.random()*colors.length)],
+        phase: Math.random()*Math.PI*2,
+        speed: isHaldi ? 0.5 + Math.random()*0.8 : 0.8 + Math.random()*1.2
+      });
+    }
+
+    function draw(t){
+      ctx.clearRect(0,0,W,H);
+      particles.forEach(p => {
+        const alpha = 0.5 + 0.5*Math.sin(t*p.speed*0.001 + p.phase);
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 4;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        // 4-point star
+        const s = p.size*(0.8+0.4*alpha);
+        ctx.moveTo(p.x, p.y-s*2);
+        ctx.lineTo(p.x+s*0.5, p.y-s*0.5);
+        ctx.lineTo(p.x+s*2, p.y);
+        ctx.lineTo(p.x+s*0.5, p.y+s*0.5);
+        ctx.lineTo(p.x, p.y+s*2);
+        ctx.lineTo(p.x-s*0.5, p.y+s*0.5);
+        ctx.lineTo(p.x-s*2, p.y);
+        ctx.lineTo(p.x-s*0.5, p.y-s*0.5);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      });
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  });
 })();
 
 </script>
