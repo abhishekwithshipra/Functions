@@ -1360,7 +1360,8 @@ seedShimmer(document.getElementById('shimmerFieldClose'), 25);
     }, 1300);
   }
 
-  openBtn.addEventListener('click', doOpen);
+  openBtn.addEventListener('pointerdown', (e)=>{ e.preventDefault(); doOpen(); });
+  openBtn.addEventListener('click', (e)=>{ e.preventDefault(); });
 })();
 
 
